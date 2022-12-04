@@ -6,16 +6,18 @@ lines = [line.strip() for line in lines]
 
 horizontalSum = 0
 depthSum = 0
+aim = 0
 
 for line in lines:
     command = line.split(' ')
 
     if(command[0] == 'forward'):
         horizontalSum += int(command[1])
+        depthSum += int(command[1])*aim
     elif(command[0] == 'down'):
-        depthSum += int(command[1])
+        aim += int(command[1])
     elif(command[0] == 'up'):
-        depthSum -= int(command[1])
+        aim -= int(command[1])
 
 print(horizontalSum)
 print(depthSum)
